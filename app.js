@@ -97,7 +97,7 @@ const handleError = (err) => {
     console.log(err);
 
     if (err.message === "Failed to fetch") {
-        err.message = err.message;
+        err.message = "Failed to fetch. Try again.";
     } else {
         err.message = "Something went wrong. Try again.";
     }

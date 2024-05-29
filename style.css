@@ -253,8 +253,8 @@ main.country {
 
 /* ===== loading ===== */
 .loading_container {
-    margin-top: 2.5rem;
-    height: 50vh;
+    padding-top: 4rem;
+    /* height: 50vh; */
     display: flex;
     align-items: center;
     justify-content: center;
