@@ -1,3 +1,8 @@
+body.dark_theme {
+    background-color: var(--dark_mode_bg);
+    color: var(--dark_mode_text_and_light_mode_elements);
+}
+
 .country_detail {
     padding-top: var(--nav_height_desktop);
 }
@@ -31,7 +36,8 @@
     max-width: 600px;
     height: 460px;
     background-color: palevioletred;
-    border: 1px solid var(--dark_mode_text_and_light_mode_elements);
+    /* border: 1px solid var(--dark_mode_text_and_light_mode_elements); */
+    border: 1px solid rgba(255, 255, 255, 0.9);
 }
 
 .country_flag img {
@@ -71,6 +77,11 @@
 .left {
     display: grid;
     gap: 0.5rem;
+}
+
+.left span:nth-of-type(2),
+.right span:nth-of-type(2) {
+    font-weight: 100;
 }
 
 .right {

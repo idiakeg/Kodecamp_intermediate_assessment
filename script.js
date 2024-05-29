@@ -14,6 +14,24 @@ const currencies = document.querySelector(".currencies");
 const languages = document.querySelector(".languages");
 let borderBtnContainer = document.querySelector(".border_btn_container");
 let backBtn = document.querySelector(".back_btn");
+const errorContainer = document.querySelector(".error_container");
+
+// dark mode
+const body = document.body;
+const nav = document.querySelector("nav");
+const modeBtns = document.querySelectorAll(".dark_mode, .light_mode");
+
+const toggleMode = () => {
+    body.classList.toggle("dark_theme");
+    nav.classList.toggle("dark_theme");
+    modeBtns.forEach((item) => {
+        item.classList.toggle("hide_mode");
+    });
+};
+
+modeBtns.forEach((button) => {
+    button.addEventListener("click", toggleMode);
+});
 
 window.onload = () => {
     countryDetail.style.display = "none";

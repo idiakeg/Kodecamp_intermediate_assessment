@@ -30,6 +30,11 @@ body {
     padding-bottom: 2rem;
 }
 
+body.dark_theme {
+    background-color: var(--dark_mode_bg);
+    color: var(--dark_mode_text_and_light_mode_elements);
+}
+
 * {
     box-sizing: border-box;
 }
@@ -50,7 +55,14 @@ nav {
     top: 0;
     left: 0;
     background-color: var(--dark_mode_text_and_light_mode_elements);
+    color: var(--light_mode_text);
     z-index: 99;
+}
+
+nav.dark_theme {
+    background-color: var(--dark_mode_bg);
+    color: var(--dark_mode_text_and_light_mode_elements);
+    box-shadow: 0 0 7px var(--light_mode_text);
 }
 
 .nav_container {
@@ -78,10 +90,22 @@ nav {
     transition: var(--transition);
 }
 
-.mode_btn:hover {
+.dark_mode:hover {
+    background-color: var(--dark_mode_bg);
+    color: var(--dark_mode_text_and_light_mode_elements);
     padding: 5px;
-    background-color: powderblue;
     border-radius: 3px;
+}
+
+.light_mode:hover {
+    background-color: var(--light_mode_bg);
+    color: var(--light_mode_text);
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.light_mode i {
+    color: #ffd700;
 }
 
 /* ===== Options ===== */
@@ -90,6 +114,7 @@ section {
 }
 
 section.options,
+section.error,
 main.country {
     padding-top: 2.5rem;
 }
@@ -101,6 +126,10 @@ main.country {
     color: var(--light_mode_input);
 }
 
+.options_container.dark_theme {
+    color: var(--dark_mode_text_and_light_mode_elements);
+}
+
 .search_option,
 .filter_option {
     border-radius: 4px;
@@ -108,6 +137,13 @@ main.country {
     box-shadow: 0 0 3px var(--light_mode_input);
     display: flex;
     align-items: center;
+}
+
+.search_option.dark_theme,
+.filter_option.dark_theme {
+    background-color: var(--dark_mode_elements);
+    color: var(--dark_mode_text_and_light_mode_elements);
+    box-shadow: none;
 }
 
 .search_option {
@@ -124,6 +160,10 @@ main.country {
 .search_option input,
 .filter_option select {
     cursor: pointer;
+}
+
+.filter_option select {
+    background-color: inherit;
 }
 
 .search_option input {
@@ -169,9 +209,16 @@ main.country {
     overflow: hidden;
     box-shadow: 0 2px 5px var(--light_mode_input);
     text-decoration: none !important;
+    background-color: var(--dark_mode_text_and_light_mode_elements);
     color: var(--light_mode_text);
     cursor: pointer;
     transition: var(--transition);
+}
+
+.country_card.dark_theme {
+    background-color: var(--dark_mode_elements);
+    color: var(--dark_mode_text_and_light_mode_elements);
+    box-shadow: none;
 }
 
 .country_card:hover {
@@ -195,7 +242,6 @@ main.country {
     padding: 20px 15px 30px;
     display: grid;
     gap: 0.2rem;
-    background-color: var(--dark_mode_text_and_light_mode_elements);
     text-decoration: none;
 }
 
@@ -223,6 +269,7 @@ main.country {
     animation: spinner 0.85s infinite linear;
 }
 
+/* ===== error ===== */
 .error_container {
     background-color: #ff6666;
     text-align: center;
@@ -240,6 +287,13 @@ main.country {
 }
 
 /* ====== Media query ===== */
+@media screen and (min-width: 800px) {
+    .error_container {
+        width: 50%;
+        margin-inline: auto;
+    }
+}
+
 @media screen and (max-width: 580px) {
     .nav_banner {
         font-size: 1.1rem;

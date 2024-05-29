@@ -5,8 +5,19 @@ const loadingContainer = document.querySelector(".loading_container");
 const regionFilter = document.querySelector(".region_filter");
 const errorContainer = document.querySelector(".error_container");
 const searchInput = document.querySelector(".search_input");
+const body = document.body;
+const nav = document.querySelector("nav");
+const optContainer = document.querySelector(".options_container");
+const searchOptions = document.querySelector(".search_option");
+const filterOptions = document.querySelector(".filter_option");
 
 const toggleMode = () => {
+    toggleCountryCardTheme();
+    body.classList.toggle("dark_theme");
+    nav.classList.toggle("dark_theme");
+    optContainer.classList.toggle("dark_theme");
+    searchOptions.classList.toggle("dark_theme");
+    filterOptions.classList.toggle("dark_theme");
     modeBtns.forEach((item) => {
         item.classList.toggle("hide_mode");
     });
@@ -53,6 +64,7 @@ const handleCountryDisplay = (data) => {
     data.forEach((item) => {
         const country_card = document.createElement("div");
         country_card.classList.add("country_card");
+
         country_card.innerHTML = `      
             <div class="country_image">
                 <img src="${item.flags.svg}" alt="country flag" />
@@ -76,6 +88,18 @@ const handleCountryDisplay = (data) => {
         country_container.append(country_card);
     });
 };
+
+const toggleCountryCardTheme = () => {
+    const countryCards = document.querySelectorAll(".country_card");
+    countryCards.forEach((card) => {
+        card.classList.toggle(
+            "dark_theme"
+            // body.classList.contains("dark_theme")
+        );
+    });
+};
+
+// toggleCountryCardTheme();
 
 const handleError = (err) => {
     console.log(err);
