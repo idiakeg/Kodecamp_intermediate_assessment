@@ -31,6 +31,7 @@
     max-width: 600px;
     height: 460px;
     background-color: palevioletred;
+    border: 1px solid var(--dark_mode_text_and_light_mode_elements);
 }
 
 .country_flag img {

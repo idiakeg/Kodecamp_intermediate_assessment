@@ -132,6 +132,7 @@ main.country {
     background: transparent;
     outline: none;
     color: inherit;
+    width: 100%;
 }
 
 .search_icon {
@@ -156,7 +157,7 @@ main.country {
 }
 
 .country_container {
-    display: flex;
+    display: none;
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 3.5rem;
@@ -220,6 +221,16 @@ main.country {
     height: 50px;
     width: 50px;
     animation: spinner 0.85s infinite linear;
+}
+
+.error_container {
+    background-color: #ff6666;
+    text-align: center;
+    padding: 10px 5px;
+    border-radius: 5px;
+    color: white;
+    font-weight: var(--font_wt_bold);
+    display: none;
 }
 
 @keyframes spinner {

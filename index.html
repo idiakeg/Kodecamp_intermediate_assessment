@@ -31,11 +31,15 @@
             <div class="wrapper options_container">
                 <div class="search_option">
                     <i class="fa-solid fa-magnifying-glass search_icon"></i>
-                    <input type="text" placeholder="Search for a country..." />
+                    <input
+                        type="text"
+                        class="search_input"
+                        placeholder="Search for a country..."
+                    />
                 </div>
                 <div class="filter_option">
-                    <select name="region" id="">
-                        <option value="" disabled hidden selected>
+                    <select name="region" class="region_filter">
+                        <option value="" disabled selected>
                             Filter by Region
                         </option>
                         <option value="Africa">Africa</option>
@@ -52,6 +56,9 @@
         </section>
         <section class="country">
             <div class="wrapper country_container"></div>
+        </section>
+        <section class="error">
+            <div class="wrapper error_container"></div>
         </section>
     </body>
 </html>
