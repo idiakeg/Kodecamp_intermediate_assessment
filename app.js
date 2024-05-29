@@ -28,7 +28,6 @@ modeBtns.forEach((button) => {
 });
 
 regionFilter.addEventListener("change", (e) => {
-    console.log(e.target.value);
     loadingContainer.style.display = "flex";
     country_container.style.display = "none";
     errorContainer.style.display = "none";
@@ -54,13 +53,11 @@ window.onload = () => {
 };
 
 const handleCountryDisplay = (data) => {
-    // console.log(data);
     loadingContainer.style.display = "none";
     country_container.style.display = "flex";
     // clear the previous content
     country_container.innerHTML = "";
     availableCountries = data;
-    // console.log(availableCountries);
     data.forEach((item) => {
         const country_card = document.createElement("div");
         country_card.classList.add("country_card");
@@ -92,14 +89,9 @@ const handleCountryDisplay = (data) => {
 const toggleCountryCardTheme = () => {
     const countryCards = document.querySelectorAll(".country_card");
     countryCards.forEach((card) => {
-        card.classList.toggle(
-            "dark_theme"
-            // body.classList.contains("dark_theme")
-        );
+        card.classList.toggle("dark_theme");
     });
 };
-
-// toggleCountryCardTheme();
 
 const handleError = (err) => {
     console.log(err);
@@ -122,8 +114,6 @@ searchInput.addEventListener("input", (e) => {
         let test = item.name.common.toLowerCase();
         return test.includes(search_string);
     });
-    console.log(search_string);
-    console.log(searchResult);
 
     // display the result
     handleCountryDisplay(searchResult);

@@ -41,7 +41,7 @@ window.onload = () => {
             loadingContainer.style.display = "none";
             countryDetail.style.display = "block";
             let country_info = data[0];
-            console.log(country_info);
+            // console.log(country_info);
             countryName.textContent = country_info.name.common;
             countryFlag.src = country_info.flags.svg;
             if (country_info.name.nativeName) {
@@ -101,7 +101,7 @@ window.onload = () => {
                             });
                             borderBtnContainer.appendChild(borderBtn);
                         })
-                        .catch((err) => console.log(err));
+                        .catch((err) => handleError(err));
                 });
             } else {
                 // create the span element
