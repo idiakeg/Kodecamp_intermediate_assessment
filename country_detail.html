@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        />
+        <link rel="stylesheet" href="./style.css" />
+        <link rel="stylesheet" href="./country_details.css" />
+        <script src="./script.js" defer></script>
+        <title>REST Countries API with color theme switcher</title>
+    </head>
+    <body>
+        <nav>
+            <div class="wrapper nav_container">
+                <div class="nav_banner">Where in the world?</div>
+                <div class="nav_theme_toggle">
+                    <span class="dark_mode mode_btn">
+                        <i class="fa-regular fa-moon"></i>
+                        Dark Mode
+                    </span>
+                    <span class="light_mode mode_btn hide_mode">
+                        <i class="fa-regular fa-sun"></i>
+                        Light Mode
+                    </span>
+                </div>
+            </div>
+        </nav>
+        <section class="loading_container">
+            <div></div>
+        </section>
+        <section class="country_detail">
+            <div class="wrapper specific_country_page">
+                <span class="back_btn"
+                    ><i class="fa-solid fa-arrow-left"></i> Back
+                </span>
+                <div class="specific_country_detail">
+                    <div class="country_flag">
+                        <img src="./blog7.jpg" alt="country flag" />
+                    </div>
+                    <div class="country_info">
+                        <p class="specific_country_name">Belgium</p>
+                        <div class="country_crumbs">
+                            <div class="left">
+                                <p>
+                                    <span class="bold">Native Name: </span>
+                                    <span class="native_name">Belgie</span>
+                                </p>
+                                <p>
+                                    <span class="bold">Population: </span>
+                                    <span class="Population"></span>
+                                </p>
+                                <p>
+                                    <span class="bold">Region: </span>
+                                    <span class="region"></span>
+                                </p>
+                                <p>
+                                    <span class="bold">Sub Region: </span
+                                    ><span class="sub_region"></span>
+                                </p>
+                                <p>
+                                    <span class="bold">Capital: </span
+                                    ><span class="capital"></span>
+                                </p>
+                            </div>
+                            <div class="right">
+                                <p>
+                                    <span class="bold">Top Level Domain: </span
+                                    ><span class="top_level_domain"></span>
+                                </p>
+                                <p>
+                                    <span class="bold">Currencies: </span
+                                    ><span class="currencies"></span>
+                                </p>
+                                <p>
+                                    <span class="bold">Languages: </span
+                                    ><span class="languages"></span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="border_countries">
+                            <span class="bold"> Border Countries:</span>
+
+                            <div class="border_btn_container"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
