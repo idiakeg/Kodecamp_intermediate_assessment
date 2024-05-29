@@ -52,22 +52,34 @@ window.onload = () => {
             population.textContent =
                 country_info.population.toLocaleString("en");
             region.textContent = country_info.region;
-            subRegion.textContent = country_info.subregion;
+            if (country_info.subregion) {
+                subRegion.textContent = country_info.subregion;
+            } else {
+                subRegion.textContent = "Not available";
+            }
             if (country_info.capital) {
                 capital.textContent = country_info.capital;
+            } else {
+                capital.textContent = "Not available";
             }
             if (country_info.tld) {
                 tld.textContent = country_info.tld[0];
+            } else {
+                tld.textContent = "Not available";
             }
             if (country_info.currencies) {
                 currencies.textContent = Object.values(
                     country_info.currencies
                 )[0].name;
+            } else {
+                currencies.textContent = "Not available";
             }
             if (country_info.languages) {
                 languages.textContent = Object.values(
                     country_info.languages
                 ).join(", ");
+            } else {
+                languages.textContent = "Not available";
             }
             if (country_info.borders) {
                 //    get the country from the country code
