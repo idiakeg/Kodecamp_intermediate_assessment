@@ -99,11 +99,24 @@ window.onload = () => {
             }
         })
         .catch((err) => {
-            console.log(err);
-            loadingContainer.style.display = "flex";
+            handleError(err);
         });
 
     backBtn.addEventListener("click", () => {
         window.history.go(-1);
     });
+};
+
+const handleError = (err) => {
+    console.log(err);
+
+    if (err.message === "Failed to fetch") {
+        err.message = err.message;
+    } else {
+        err.message = "Something went wrong. Try again.";
+    }
+    countryDetail.style.display = "none";
+    loadingContainer.style.display = "none";
+    errorContainer.style.display = "block";
+    errorContainer.textContent = err.message;
 };
