@@ -45,6 +45,7 @@ window.onload = () => {
     fetch("https://restcountries.com/v3.1/all")
         .then((res) => res.json())
         .then((data) => {
+            availableCountries = data;
             handleCountryDisplay(data);
         })
         .catch((err) => {
@@ -57,7 +58,6 @@ const handleCountryDisplay = (data) => {
     country_container.style.display = "flex";
     // clear the previous content
     country_container.innerHTML = "";
-    availableCountries = data;
     data.forEach((item) => {
         const country_card = document.createElement("div");
         country_card.classList.add("country_card");
@@ -107,14 +107,11 @@ const handleError = (err) => {
 };
 
 // search country
-searchInput.addEventListener("input", (e) => {
-    search_string = e.target.value.replace(/\s/g, "").toLowerCase();
-    // search_string = e.target.value.trim().toLowerCase();
-    searchResult = availableCountries.filter((item) => {
-        let test = item.name.common.toLowerCase();
-        return test.includes(search_string);
-    });
-
-    // display the result
+searchInput.addEventListener("keyup", (e) => {
+    let searchResult = availableCountries.filter(({ name: { common } }) =>
+        common
+            .toLowerCase()
+            .includes(e.target.value.replace(/\s/g, "").toLowerCase())
+    );
     handleCountryDisplay(searchResult);
 });
